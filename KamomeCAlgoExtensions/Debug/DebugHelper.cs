@@ -6,8 +6,7 @@ public static class DebugHelper
 {
     public static void LaunchDebugger(Action<string> logger, TimeSpan delay)
     {
-#if DEBUG
-        logger("Running in Debug mode.");
+        logger("Launching debugger.");
         var debuggerLaunched = Debugger.Launch();
         if (debuggerLaunched is false)
         {
@@ -17,8 +16,5 @@ public static class DebugHelper
 
         var delayTask = Task.Delay(delay);
         delayTask.Wait();
-#else
-        logger("Running in Release mode.");
-#endif
     }
 }
