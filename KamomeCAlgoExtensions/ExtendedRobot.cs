@@ -7,6 +7,7 @@ namespace KamomeCAlgoExtensions;
 
 public abstract class ExtendedRobot : Robot, IDiscordProperty
 {
+    protected const bool LaunchDebugger = false;
     protected const int DebuggerDelaySecs = 10;
 
     [Parameter("Discord API Token", Group = "Discord")]
@@ -27,7 +28,7 @@ public abstract class ExtendedRobot : Robot, IDiscordProperty
 
     protected override void OnStart()
     {
-        DebugHelper.LaunchDebugger(Print, TimeSpan.FromSeconds(DebuggerDelaySecs));
+        if (LaunchDebugger) DebugHelper.LaunchDebugger(Print, TimeSpan.FromSeconds(DebuggerDelaySecs));
         base.OnStart();
         var task = SetDiscordPropertiesAsync();
         task.Wait();
