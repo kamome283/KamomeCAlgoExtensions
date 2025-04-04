@@ -7,8 +7,8 @@ namespace KamomeCAlgoExtensions;
 
 public abstract class ExtendedRobot : Robot, IDiscordProperty
 {
-    protected const bool LaunchDebugger = false;
-    protected const int DebuggerDelaySecs = 10;
+    protected readonly int DebuggerDelaySecs = 10;
+    protected readonly bool LaunchDebugger = false;
 
     [Parameter("Discord API Token", Group = "Discord")]
     public string DiscordApiToken { get; set; } = null!;
