@@ -1,11 +1,14 @@
 ﻿using cAlgo.API;
 using Discord.WebSocket;
+using KamomeCAlgoExtensions.Debug;
 using KamomeCAlgoExtensions.Discord;
 
 namespace KamomeCAlgoExtensions;
 
 public abstract class ExtendedRobot : Robot, IDiscordProperty
 {
+    protected const int DebuggerDelaySecs = 10;
+
     [Parameter("Discord API Token", Group = "Discord")]
     public string DiscordApiToken { get; set; } = null!;
 
@@ -24,6 +27,7 @@ public abstract class ExtendedRobot : Robot, IDiscordProperty
 
     protected override void OnStart()
     {
+        DebugHelper.LaunchDebugger(Print, TimeSpan.FromSeconds(DebuggerDelaySecs));
         base.OnStart();
         var task = SetDiscordPropertiesAsync();
         task.Wait();
