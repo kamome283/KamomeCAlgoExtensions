@@ -5,6 +5,11 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AlgoBuild>false</AlgoBuild>
+        <Version>0.0.1</Version>
+        <Authors>Tsubasa</Authors>
+        <PackageProjectUrl>https://github.com/kamome283/KamomeCAlgoExtensions</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/kamome283/KamomeCAlgoExtensions</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
     <ItemGroup>
