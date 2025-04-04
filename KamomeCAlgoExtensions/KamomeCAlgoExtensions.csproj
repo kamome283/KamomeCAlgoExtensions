@@ -4,9 +4,11 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <AlgoBuild>false</AlgoBuild>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="cTrader.Automate" Version="1.*"/>
         <PackageReference Include="Discord.Net" Version="3.*"/>
     </ItemGroup>
 
